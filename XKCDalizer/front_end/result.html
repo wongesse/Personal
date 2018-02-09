@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+ <html>
+	 <head>
+		 <!--Import Google Icon Font-->
+		 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		 <!--Import materialize.css-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+     <link rel="stylesheet" href="/styles.css" >
+     <!--Let browser know website is optimized for mobile-->
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	 </head>
+
+	 <body class="blue lighten-3">
+    <a href="./index.html">
+      <h3 class="white-text left-align" style="margin-left: 1%;">tkcd</h3>
+    </a>
+
+     <div class="container" style="margin-top: 5%;">
+
+       <div class="row">
+         <p class="white-text col s6 push-s3" style="">Wanna search again?</p>
+       </div>
+
+       <form>
+         <div class="row">
+           <div class="input-field col s6 push-s3 color white search-overide z-depth-2" >
+             <input type="text" placeholder="Find me an #XKCD" class="validate">
+           </div>
+         </div>
+       </form>
+
+       <div class="row">
+         <p class="white-text col s6 push-s3">The most relevant XKCD for \< Your Input \></p>
+       </div>
+
+       <div class="row">
+         <img class="materialboxed col s6 push-s3" id="resultImage" width="650" src="" alt="Something should go here soon...">
+       </div>
+
+     </div>
+
+     <script type="text/javascript">
+         var twitterResponse = localStorage.getItem('twitterResponse')
+         var xmlhttp = new XMLHttpRequest()
+         twitterResponse = encodeURIComponent(twitterResponse)
+
+          xmlhttp.onreadystatechange = function()
+          {
+            document.getElementById("resultImage").src = xmlhttp.response
+          }
+
+       xmlhttp.open("GET", '/' + 'query/' + twitterResponse, true);
+       xmlhttp.send();
+
+     </script>
+
+
+
+		 <!--Import jQuery before materialize.js-->
+			<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+			<script> $(".button-collapse").sideNav(); </script>
+	 </body>
+ </html>
