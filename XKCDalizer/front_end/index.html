@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="/styles.css">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body class="blue lighten-3">
+
+  <div class="container center-align" style="margin-top: 5%; margin-bottom: 10%;">
+    <!-- Title -->
+    <div class="row">
+      <h1 class="white-text"> XKCDalizer </h1>
+      <!-- <p class="white-text flow-text" style="margin-top: -4%;">we got what you need.</p> -->
+    </div>
+
+    <!-- Search Query -->
+    <div class="row">
+      <p class="white-text flow-text" style="margin-bottom: -3%; font-size: 18px;">Type in any text or hashtag to see which XKCD comic is most relevant</p>
+    </div>
+    <div class="row">
+      <div class="input-field col s6 offset-s3 color white search-overide z-depth-2">
+        <input tabindex="0" type="text" placeholder="Find me an #XKCD" id="inputField">
+        <!-- onkeyup="myscript(event,this)" -->
+      </div>
+      <!-- Dropdown Trigger -->
+      <div class="input-field col s2 teal z-depth-2" style="border-radius: 7px; margin-left: 10px;">
+        <select id="dropSelect">
+          <option value="1">Plaintext</option>
+          <option value="2">Hashtag</option>
+        </select>
+      </div>
+    </div>
+    <div class="row" id="TEST">
+      <input class="btn" type="submit" display="hidden" onclick="prepQuery()">
+    </div>
+
+    <!-- Image Result -->
+
+    <div>
+      <div class="row">
+        <div class="col l2" id="backButton">
+          <a class="wave-effect btn" style="visibility: hidden;" id="backClick">back</a>
+        </div>
+        <img class="materialboxed col l8 white-text" id="resultImage" src="" alt="Something should go here soon...">
+        <div class="col l2 " id="forwardButton">
+          <a class="wave-effect btn" style="visibility: hidden;" id="nextClick">next</a>
+        </div>
+
+      </div>
+      <div id="twitterDiv">
+        <a class="twitter-timeline" href="" id="twitterImage" target="_blank"># Tweets</a>
+
+        <!--a id="twitterImage" target="_blank" href="https://twitter.com/search?q=%23corgi&src=typd"><img src="twitter-hashtag.png"></a-->
+      </div>
+    </div>
+  </div>
+
+    <!--Import jQuery before materialize.js-->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/frontend_js.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script> $(".button-collapse").sideNav(); </script>
+
+</body>
+
+</html>
